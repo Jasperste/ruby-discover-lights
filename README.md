@@ -24,6 +24,3 @@ A few use cases you can use this project for:
 Prerequirement: Make sure you have postgress locally available (optionally hosted in Docker)
 
 `script/server `          (with ngrok `ngrok http 9292 -subdomain=browse`)
-
-# Next steps
-Setup CI (for example via Github actions)
