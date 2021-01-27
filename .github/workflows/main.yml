@@ -30,9 +30,15 @@ jobs:
         run: bundle install
       - name: Bootstrap project
         run: script/bootstrap
+        env:
+          POSTGRES_PASSWORD: postgres
       - name: Run Rubocop
         run: rubocop
-      #- name: RSpec
-      #  run: bundle exec rspec
-      #- name: Cucumber
-      #  run: bundle exec cucumber
+      - name: RSpec
+        run: bundle exec rspec
+        env:
+          POSTGRES_PASSWORD: postgres
+      - name: Cucumber
+        run: bundle exec cucumber
+        env:
+          POSTGRES_PASSWORD: postgres
