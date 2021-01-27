@@ -1,0 +1,3 @@
+#!/bin/sh
+
+bundle exec sequel --echo -m db/migrations postgres://localhost/browse_test

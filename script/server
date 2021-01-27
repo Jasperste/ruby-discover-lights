@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export DATABASE_URL="postgres://localhost/browse_test"
+
+bundle exec rackup
