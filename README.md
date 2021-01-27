@@ -1,5 +1,7 @@
 ## Browse and Discover Lights API
 
+Sinatra API to store disovered lights and fetch users who have seen the same lights.
+
 I work quite a lot in private repositories, but this public repository can be used for some future internal and external blog as examples and sections to point towards.
 
 If you want to you can clone this repository and run it for yourselves with the included scripts to rule them all.
