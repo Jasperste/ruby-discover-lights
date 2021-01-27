@@ -8,6 +8,7 @@ jobs:
         image: postgres
         env:
           POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres
           POSTGRES_DB: browse_test
         ports:
           - 5432:5432
@@ -30,15 +31,9 @@ jobs:
         run: bundle install
       - name: Bootstrap project
         run: script/bootstrap
-        env:
-          POSTGRES_PASSWORD: postgres
       - name: Run Rubocop
         run: rubocop
       - name: RSpec
         run: bundle exec rspec
-        env:
-          POSTGRES_PASSWORD: postgres
       - name: Cucumber
         run: bundle exec cucumber
-        env:
-          POSTGRES_PASSWORD: postgres
