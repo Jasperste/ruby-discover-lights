@@ -22,7 +22,7 @@ module Browse
           # the iOS app removes leading zero's in mac address, which is unified before saving
           let(:mac_addresses) { ['a1:e:e:3:a:c7'] }
 
-          it 'adds a leading zero to the mac address before doing a insertion' do
+          it 'adds a leading zero to the mac address before doing an insertion' do
             subject.store(user_id: user.id, macs: mac_addresses)
 
             stored_mac_address = Models::DiscoveredLights.where(user: user).first.mac
