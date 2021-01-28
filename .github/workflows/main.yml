@@ -31,6 +31,8 @@ jobs:
         run: bundle install
       - name: Bootstrap project
         run: script/bootstrap
+        env:
+          CI: true
       - name: Run Rubocop
         run: rubocop
       - name: RSpec
