@@ -1,5 +1,5 @@
 ## Browse and Discover Lights API
-[![Master](https://github.com/jasperste/ruby-discover-lights/workflows/CI/badge.svg)](https://github.com/jasperste/ruby-discover-lights/actions)
+[![Main](https://github.com/jasperste/ruby-discover-lights/workflows/CI/badge.svg)](https://github.com/jasperste/ruby-discover-lights/actions)
 
 
 Sinatra API to store disovered lights and fetch users who have seen the same lights.
