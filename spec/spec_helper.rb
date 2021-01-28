@@ -101,7 +101,7 @@ end
 
 Dir[File.expand_path(File.join(File.dirname(__FILE__), 'support', '**', '*.rb'))].sort.each { |f| require f }
 
-ENV['DATABASE_URL'] = 'postgres://localhost/browse_test'
+ENV['DATABASE_URL'] = 'postgres://postgres:postgres@localhost/browse_test'
 ENV['RACK_ENV'] = 'test'
 ENV['TZ'] = 'UTC'
 

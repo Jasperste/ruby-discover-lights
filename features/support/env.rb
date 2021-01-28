@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-ENV['DATABASE_URL'] = 'postgres://localhost/browse_test'
+ENV['DATABASE_URL'] = 'postgres://postgres:postgres@localhost/browse_test'
 ENV['RACK_ENV'] = 'test'
 ENV['TZ'] = 'UTC'
 

@@ -1,4 +1,41 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 on: [push, pull_request]
+jobs:
+  run-test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres
+          POSTGRES_DB: browse_test
+        ports:
+          - 5432:5432
+        # Set health checks to wait until Postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.7 # same as .ruby-version, but this only accepts minor versions
+      - name: Install bundler
+        run: gem install bundler
+      - name: Install gems
+        run: bundle install
+      - name: Bootstrap project
+        run: script/bootstrap
+        env:
+          CI: true
+      - name: Run Rubocop
+        run: rubocop
+      - name: RSpec
+        run: bundle exec rspec
+      - name: Cucumber
+        run: bundle exec cucumber
